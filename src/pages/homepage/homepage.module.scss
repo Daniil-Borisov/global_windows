@@ -1,0 +1,39 @@
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100vh;
+	width: 100%;
+	text-align: center;
+	gap: 24px;
+	padding: 40px 0;
+
+	@media (min-width: 1024px) {
+		flex-direction: row;
+		gap: 40px;
+		align-items: center;
+	}
+
+	@media (min-width: 1440px) {
+		gap: 100px;
+	}
+}
+
+.windowImage {
+	max-width: 460px;
+	width: 100%;
+	border-radius: 16px;
+
+	@media (min-width: 1024px) {
+		max-width: 60%;
+		flex: 1;
+	}
+
+	@media (min-width: 1280px) {
+		max-height: 680px;
+	}
+
+	@media (min-width: 1560px) {
+		max-width: 65%;
+	}
+}

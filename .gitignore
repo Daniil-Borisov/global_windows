@@ -1,0 +1,52 @@
+# macOS
+.DS_Store
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# React build output
+build/
+dist/
+out/
+
+# Testing
+coverage/
+*.lcov
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+
+# VSCode
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# OS generated files
+*.swp
+*.swo
+
+# Backup files
+*~
+*.bak
+*.tmp
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Misc
+*.tgz
+
+# Local env files
+.local/

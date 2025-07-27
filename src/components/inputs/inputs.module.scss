@@ -1,0 +1,109 @@
+.radioButton {
+	display: flex;
+	padding: 8px;
+	align-items: center;
+	gap: 16px;
+	border-radius: 8px;
+	border: 1px solid var(--gray, #a6a6a6);
+	margin: 0 !important;
+	transition: all 0.3s;
+	min-height: 56px;
+
+	&:hover {
+		background: var(--light-gray, #f2f2f2);
+	}
+
+	:global(.MuiFormControlLabel-label) {
+		display: block;
+		width: 100%;
+	}
+
+	@media (min-width: 1024px) {
+		padding: 16px;
+	}
+}
+
+.option {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	flex: 1;
+	border-radius: 8px;
+	gap: 8px;
+
+	img {
+		width: 80px;
+		border-radius: 4px;
+
+		@media (min-width: 768px) {
+			width: 120px;
+		}
+	}
+}
+
+.description {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	text-align: left;
+
+	h3 {
+		color: var(--black, #454545);
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		margin: 0;
+	}
+
+	h4 {
+		color: var(--black, #454545);
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		margin: 4px 0 0 0;
+	}
+
+	@media (min-width: 1024px) {
+		h3 {
+			font-size: 16px;
+		}
+
+		h4 {
+			font-size: 14px;
+		}
+	}
+}
+
+.radioGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
+	@media (min-width: 1024px) {
+		gap: 16px;
+	}
+}
+
+.sliderTypography {
+	font-size: 18px !important;
+	color: #002d6e;
+	font-weight: 700 !important;
+	text-align: left;
+
+	@media (min-width: 1024px) {
+		font-size: 24px !important;
+	}
+}
+
+.sliderSublabel {
+	font-size: 12px !important;
+	text-align: left !important;
+	color: #454545;
+
+	@media (min-width: 1024px) {
+		font-size: 14px !important;
+	}
+}
