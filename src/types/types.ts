@@ -8,10 +8,7 @@ export interface IRadioButton {
 
 export interface IFormData {
 	material: string;
-	size: {
-		length: number;
-		width: number;
-	};
+	size: string;
 	type: string;
 	contacts: {
 		name: string;
@@ -22,4 +19,5 @@ export interface IFormData {
 	sashes: string;
 	glassPackage: string;
 	selectedPhoto: string | null;
+	opening: string;
 }

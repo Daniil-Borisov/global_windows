@@ -4,6 +4,7 @@ import { RadioButton } from './radio-button.tsx';
 import type { IFormData, IRadioButton } from '../../types/types.ts';
 import { useStepForm } from '../../context/use-step-form.tsx';
 import { steps } from '../../consts/steps.ts';
+import { prices } from '../../consts/prices.ts';
 
 interface IRadioGroupWrapperProps {
 	radioButtons: IRadioButton[];
@@ -14,19 +15,24 @@ const RadioGroupWrapper = ({ radioButtons }: IRadioGroupWrapperProps) => {
 		useStepForm();
 	const current = steps.find((s) => s.step === currentStep);
 
-	if (!current) return null;
-
-	if (current.fieldType !== 'radio') return null;
+	if (!current || current.fieldType !== 'radio') return null;
 
 	const field = current.field as keyof IFormData;
+	const material = formData.material as keyof typeof prices;
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const value = e.target.value;
 		updateNested(field, value);
 
-		const selected = radioButtons.find((item) => item.value === value);
-		if (selected?.photo) {
-			setSelectedPhoto(selected.photo);
+		try {
+			const imageData = prices?.[material]?.[field]?.[value];
+			console.log(material, field, value);
+
+			if (imageData?.image) {
+				setSelectedPhoto(imageData.image);
+			}
+		} catch (err) {
+			console.warn('Ошибка при поиске изображения в prices:', err);
 		}
 	};
 

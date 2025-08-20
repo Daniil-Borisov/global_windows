@@ -5,10 +5,7 @@ import { steps } from '../consts/steps';
 
 const initialFormData: IFormData = {
 	material: '',
-	size: {
-		length: 0,
-		width: 0,
-	},
+	size: '',
 	type: '',
 	contacts: {
 		name: '',
@@ -19,6 +16,7 @@ const initialFormData: IFormData = {
 	sashes: '',
 	glassPackage: '',
 	selectedPhoto: null,
+	opening: '',
 };
 
 export const StepFormProvider = ({ children }: { children: ReactNode }) => {

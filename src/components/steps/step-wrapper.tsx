@@ -1,17 +1,30 @@
 import { useStepForm } from '../../context/use-step-form';
-
-import styles from './step.module.scss';
 import { steps } from '../../consts/steps';
 import { MainButton } from '../buttons/button';
 import { BackButton } from '../buttons/back-button';
+import RadioGroupWrapper from '../inputs/radio-group-wrapper';
+
+import styles from './step.module.scss';
+import ContactsStep from './contact-step';
+import SummaryCard from './summary-step';
 
 const StepWrapper = () => {
 	const { currentStep, nextStep, prevStep } = useStepForm();
-
 	const current = steps.find((s) => s.step === currentStep);
 	if (!current) return null;
 
-	const StepComponent = current.component;
+	const renderStepComponent = () => {
+		switch (current.fieldType) {
+			case 'radio':
+				return <RadioGroupWrapper radioButtons={current.options || []} />;
+			case 'contacts':
+				return <ContactsStep />;
+			case 'summary':
+				return <SummaryCard />;
+			default:
+				return null;
+		}
+	};
 
 	return (
 		<div className={styles.wrapper}>
@@ -21,9 +34,7 @@ const StepWrapper = () => {
 					{current.require && <span>Обов’язково</span>}
 				</div>
 			)}
-			<div className={styles.stepContent}>
-				<StepComponent />
-			</div>
+			<div className={styles.stepContent}>{renderStepComponent()}</div>
 			<div className={styles.btnsWrapper}>
 				{currentStep !== 1 ? (
 					<BackButton onClick={() => prevStep()} />

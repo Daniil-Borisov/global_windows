@@ -123,3 +123,36 @@
 		gap: 40px;
 	}
 }
+
+.summary {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 16px;
+
+	p {
+		text-align: left;
+		margin: 0;
+	}
+
+	.item {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		.label {
+			color: var(--black, #454545);
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+		}
+
+		.value {
+			color: var(--black, #454545);
+			font-size: 12px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+		}
+	}
+}

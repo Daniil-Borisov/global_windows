@@ -4,27 +4,27 @@ const materials = [
 	{
 		label: 'Пластик',
 		value: 'plastic',
-		image: '/images/plastic.png',
-		photo: '/photo/photo-1.jpg',
+		image: `${import.meta.env.BASE_URL}/images/plastic.png`,
+		photo: `${import.meta.env.BASE_URL}/photo/photo-1.jpg`,
 	},
 	{
 		label: 'Дерево',
 		value: 'wood',
-		image: '/images/wood.png',
-		photo: '/photo/photo-2.jpg',
+		image: `${import.meta.env.BASE_URL}/images/wood.png`,
+		photo: `${import.meta.env.BASE_URL}/photo/photo-2.jpg`,
 	},
 	{
 		label: 'Алюміній',
 		value: 'aluminium',
-		image: '/images/aluminium.png',
-		photo: '/photo/photo-3.jpg',
+		image: `${import.meta.env.BASE_URL}/images/aluminium.png`,
+		photo: `${import.meta.env.BASE_URL}/photo/photo-3.jpg`,
 	},
 	{
 		label: 'Метал',
 		value: 'metal',
-		image: '/images/metal.png',
+		image: `${import.meta.env.BASE_URL}/images/metal.png`,
 		subtext: 'Додатковий підпис',
-		photo: '/photo/photo-4.jpg',
+		photo: `${import.meta.env.BASE_URL}/photo/photo-4.jpg`,
 	},
 ];
 
